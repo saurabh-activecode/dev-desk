@@ -53,8 +53,13 @@
   .md-preview h3 { font-size: 1.25em; font-weight: 600; margin: 0.75em 0 0.4em; color: #cbd5e1; }
   .md-preview h4, .md-preview h5, .md-preview h6 { font-weight: 600; margin: 0.5em 0 0.3em; color: #94a3b8; }
   .md-preview p { margin: 0.6em 0; line-height: 1.7; color: #cbd5e1; }
-  .md-preview ul, .md-preview ol { margin: 0.5em 0; padding-left: 1.5em; color: #cbd5e1; }
+  .md-preview ul { list-style-type: disc !important; margin: 0.6em 0; padding-left: 1.6em; color: #cbd5e1; }
+  .md-preview ol { list-style-type: decimal !important; margin: 0.6em 0; padding-left: 1.6em; color: #cbd5e1; }
+  .md-preview ul ul { list-style-type: circle !important; }
+  .md-preview ul ul ul { list-style-type: square !important; }
+  .md-preview ol ol { list-style-type: lower-alpha !important; }
   .md-preview li { margin: 0.25em 0; line-height: 1.6; }
+  .md-preview li.task-list-item { list-style-type: none !important; margin-left: -0.75em; }
   .md-preview blockquote { border-left: 3px solid #6366f1; margin: 0.8em 0; padding: 0.5em 1em; background: rgba(99,102,241,0.08); border-radius: 0 6px 6px 0; color: #94a3b8; }
   .md-preview code { background: #1e293b; color: #7dd3fc; padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.875em; }
   .md-preview pre { background: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 1em; overflow-x: auto; margin: 0.8em 0; }
@@ -63,10 +68,70 @@
   .md-preview strong { color: #f1f5f9; font-weight: 700; }
   .md-preview em { color: #e2e8f0; font-style: italic; }
   .md-preview hr { border: none; border-top: 1px solid #1e293b; margin: 1.2em 0; }
-  .md-preview table { width: 100%; border-collapse: collapse; margin: 0.8em 0; }
-  .md-preview th { background: #1e293b; color: #f1f5f9; padding: 0.5em 0.75em; text-align: left; font-weight: 600; }
-  .md-preview td { padding: 0.5em 0.75em; border-top: 1px solid #1e293b; color: #cbd5e1; }
-  .md-preview tr:hover td { background: rgba(255,255,255,0.02); }
+  .md-preview del { color: #64748b; text-decoration: line-through; }
+  .md-preview img { max-width: 100%; border-radius: 8px; border: 1px solid #1e293b; margin: 0.8em 0; display: block; }
+  .md-preview table { width: 100%; border-collapse: collapse; margin: 0; }
+  .md-preview th { background: #131b2e; color: #f1f5f9; padding: 0.6em 0.85em; text-align: left; font-weight: 600; border: 1px solid #1e293b; font-size: 0.85em; }
+  .md-preview td { padding: 0.55em 0.85em; border: 1px solid #1e293b; color: #cbd5e1; font-size: 0.85em; }
+  .md-preview tr:hover td { background: rgba(99,102,241,0.04); }
+  .task-checkbox { cursor: pointer; margin-right: 0.5em; accent-color: #6366f1; vertical-align: middle; }
+  .md-preview [contenteditable="true"] { outline: none; }
+
+  /* KaTeX Math Styling */
+  .md-preview .katex { color: #f1f5f9; font-size: 1.08em; }
+  .md-preview .katex-display { margin: 0; overflow-x: auto; overflow-y: hidden; padding: 0.4rem 0; }
+  .md-preview .math-inline { vertical-align: middle; }
+
+  /* Footnotes Styling */
+  .md-preview .footnote-ref { vertical-align: super; font-size: 0.72rem; margin: 0 2px; }
+  .md-preview .footnote-ref a { text-decoration: none; }
+  .md-preview .footnotes-section { border-top: 1px solid rgba(71, 85, 105, 0.4); margin-top: 2rem; }
+  .md-preview .footnote-item:target { background: rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.4); }
+
+  /* Inline HTML Elements */
+  .md-preview kbd {
+    background: #1e293b;
+    border: 1px solid #475569;
+    border-bottom: 2px solid #334155;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    color: #e2e8f0;
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.8em;
+    font-weight: 600;
+    line-height: 1;
+    padding: 2px 6px;
+    margin: 0 2px;
+  }
+  .md-preview mark {
+    background-color: rgba(234, 179, 8, 0.25);
+    color: #fef08a;
+    border-radius: 3px;
+    padding: 1px 5px;
+  }
+  .md-preview details {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(51, 65, 85, 0.8);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+  }
+  .md-preview details summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #a5b4fc;
+    outline: none;
+  }
+  .md-preview sub, .md-preview sup {
+    font-size: 0.75em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  .md-preview sub { bottom: -0.25em; }
+  .md-preview sup { top: -0.5em; }
+  .md-preview u { text-decoration: underline; text-underline-offset: 2px; }
 
   /* Mermaid */
   .mermaid svg { max-width: 100%; }
